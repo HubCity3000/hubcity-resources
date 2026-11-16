@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hub City Tablet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="tablet" class="hidden">
+  <div class="bezel">
+    <div class="screen">
+
+      <!-- App grid -->
+      <div id="view-home" class="view">
+        <div class="statusbar"><span>Hub City Tablet</span><span id="clock"></span></div>
+        <div class="grid">
+          <div class="tile" id="tile-market">
+            <div class="tile-icon market">🕶️</div>
+            <div class="tile-label">Black Market</div>
+          </div>
+          <div class="tile" id="tile-vibez">
+            <div class="tile-icon vibez">Z</div>
+            <div class="tile-label">Vibez</div>
+          </div>
+          <div class="tile" id="tile-race">
+            <div class="tile-icon race">🏁</div>
+            <div class="tile-label">Need 2 Speed</div>
+          </div>
+        </div>
+        <p class="hint">Deals are arranged here. Exchanges happen in person. Races are arranged here — and only here.</p>
+      </div>
+
+      <!-- Black Market -->
+      <div id="view-market" class="view hidden">
+        <div class="appbar">
+          <button class="back" data-back>‹ Apps</button>
+          <span class="app-title">Black Market</span>
+        </div>
+
+        <div class="panel" id="hot-panel">
+          <div class="panel-title">Tonight's meet</div>
+          <div id="hot-text">Checking…</div>
+        </div>
+
+        <div class="panel hidden" id="deal-panel">
+          <div class="panel-title">Your active deal</div>
+          <div id="deal-details"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Build an order</div>
+          <div id="catalog"></div>
+          <div class="order-footer">
+            <span>Estimated total: <b id="order-total">$0</b></span>
+            <button id="submit-order">Submit deal request</button>
+          </div>
+          <div id="order-result" class="result"></div>
+          <p class="fineprint">Prices can shift a little when the dealer prices your deal.
+          If the dealer agrees, you get the spot and a time window — cash in hand, in person.
+          No deal, no sale.</p>
+        </div>
+
+        <div class="panel" id="laundering-panel">
+          <div class="panel-title">🧺 Laundering</div>
+          <div id="laundering-text">No wash spot advertised right now.</div>
+          <p class="fineprint">Marked bills in, clean bank money out — minus the fee.
+          The wash only works at the advertised spot, while it's active.</p>
+        </div>
+      </div>
+
+      <!-- Vibez -->
+      <div id="view-vibez" class="view hidden">
+        <div class="appbar">
+          <button class="back" data-back>‹ Apps</button>
+          <span class="app-title">Vibez</span>
+        </div>
+        <iframe id="vibez-frame" title="Vibez" src="about:blank"></iframe>
+      </div>
+
+      <!-- Need 2 Speed (street racing — data lives in hubcity-streetrace) -->
+      <div id="view-race" class="view hidden">
+        <div class="appbar">
+          <button class="back" data-back>‹ Apps</button>
+          <span class="app-title">Need 2 Speed</span>
+        </div>
+
+        <div id="race-result" class="result"></div>
+
+        <div class="panel hidden" id="myrace-panel">
+          <div class="panel-title">Your race</div>
+          <div id="myrace-details"></div>
+          <div class="order-footer">
+            <button id="sr-start" class="race-btn primary hidden">Start race</button>
+            <button id="sr-cancel" class="race-btn danger hidden">Cancel race</button>
+            <button id="sr-leave" class="race-btn hidden">Leave</button>
+          </div>
+          <p class="fineprint">When the host starts, the start line lands on every racer's GPS.
+          Grid up, wait for the countdown — and when it starts, the crew seals the side streets along the route.</p>
+        </div>
+
+        <div class="panel" id="create-panel">
+          <div class="panel-title">Start a race</div>
+          <div id="route-list"></div>
+        </div>
+
+        <div class="panel" id="lobby-panel">
+          <div class="panel-title">Open lobbies</div>
+          <div id="lobby-list"></div>
+        </div>
+
+        <div class="panel hidden" id="lastresults-panel">
+          <div class="panel-title">Your last race</div>
+          <div id="lastresults"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Records</div>
+          <div id="records-list"></div>
+          <p class="fineprint">Wins and best times per route, from every finished race.
+          No money changes hands in Need 2 Speed — bragging rights only.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
